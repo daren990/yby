@@ -1,8 +1,48 @@
-<view class="page">
-  <view class="page__hd">
-      {{motto}}
-  </view>
-  <view class="page__bd">
-  body
-  </view>
+<!--index.wxml-->
+<view class="container">
+    <view class="page_hd">
+          <view class="hd_left">
+            <view class="left_click">推荐</view>
+          </view>
+          <view class="hd_left">
+            <view class="rigin_click">附近</view>
+          </view>
+    </view>
+    <view class="page_bd">
+        <view class="bd_bd">
+            <view class="left_bd clearfix">
+                <view class="zuo">
+                    <image src="{{userInfo.avatarUrl}}"></image>
+                </view>
+                <view class="you">
+                    <view class="you_top clearfix">
+                        <view class="top_left">
+                            aaaaaaa
+                            <image src="../icon/boy.png"></image>
+                        </view>
+                        <view class="top_right">
+                            <view class="mony">10</view>元/时
+                        </view>
+                    </view>
+                    <view class="you_bd clearfix">
+                        <view>122211</view>
+                        <view>111</view>
+                        <view>122211</view>
+                        <view>122211122211</view>
+                        <view>111</view>
+                        <view>111</view>
+                        <view>122211122211122211122211</view>
+                        <view>122211122211</view>
+                        <view>122211122211</view>
+                        <view>122211122211</view>
+                        <view>122211122211</view>
+                    </view>
+                    <view class="you_img">img</view>
+                    <view class="you_foot">foot</view>
+                </view>
+            </view>
+            <view class="left_bd">222</view>
+        </view>
+        
+    </view>
 </view>

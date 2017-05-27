@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
+<!--叶头-->
     <view class="page_hd">
           <view class="hd_left">
             <view class="left_click">推荐</view>
@@ -8,8 +9,11 @@
             <view class="rigin_click">附近</view>
           </view>
     </view>
+    <!--叶尾end-->
+    <!--主体-->
     <view class="page_bd">
         <view class="bd_bd">
+        <!--推荐主体-->
             <view class="left_bd clearfix">
                 <view class="zuo">
                     <image src="{{userInfo.avatarUrl}}"></image>
@@ -37,12 +41,16 @@
                         <view>122211122211</view>
                         <view>122211122211</view>
                     </view>
-                    <view class="you_img">img</view>
-                    <view class="you_foot">foot</view>
+                    <view class="you_img">
+                        <image src="../images/12.png"></image>
+                        <image src="../images/11.png"></image>
+                        <image src="../images/10.png"></image>
+                    </view>
+                    <view class="you_foot">吧啦吧啦一大堆</view>
                 </view>
-            </view>
-            <view class="left_bd">222</view>
+            </view>     
+            <!-- 推荐主体结束-->
         </view>
-        
-    </view>
+    </view>         
+    <!--主体end-->
 </view>

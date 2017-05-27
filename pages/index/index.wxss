@@ -4,6 +4,7 @@
   line-height: 36px;
   width: 100%;
   border-bottom: 2px solid gainsboro;
+  background: #fff;
 }
 .page_bd{
     width: 100%;
@@ -21,7 +22,7 @@
 }
 .page_bd .bd_bd{
     width: 100%;
-    background: silver;
+    background:gainsboro;
 }
 .page_bd .left_bd{
     width: 100%;
@@ -82,4 +83,13 @@
     font-size: .6em;
     margin-right: 20rpx;
     margin-bottom: 20rpx;
+}
+.you_img image{
+    width:28%;
+    height: 160rpx;
+    margin: 10rpx;
+}
+.you_foot{
+    font-size: .8em;
+    color: lightblue;
 }

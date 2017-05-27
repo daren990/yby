@@ -14,39 +14,27 @@
     <view class="page_bd">
         <view class="bd_bd">
         <!--推荐主体-->
-            <view class="left_bd clearfix">
+            <view wx:for="{{recommend}}" wx:for-item="item" class="left_bd clearfix">
                 <view class="zuo">
-                    <image src="{{userInfo.avatarUrl}}"></image>
+                    <image src="{{item.touxiangimg}}"></image>
                 </view>
                 <view class="you">
                     <view class="you_top clearfix">
                         <view class="top_left">
-                            aaaaaaa
-                            <image src="../icon/boy.png"></image>
+                            {{item.name}}
+                            <image src="{{ item.gender }}"></image>
                         </view>
                         <view class="top_right">
-                            <view class="mony">10</view>元/时
+                            <view class="mony">{{}item.mony}</view>元/时
                         </view>
                     </view>
-                    <view class="you_bd clearfix">
-                        <view>122211</view>
-                        <view>111</view>
-                        <view>122211</view>
-                        <view>122211122211</view>
-                        <view>111</view>
-                        <view>111</view>
-                        <view>122211122211122211122211</view>
-                        <view>122211122211</view>
-                        <view>122211122211</view>
-                        <view>122211122211</view>
-                        <view>122211122211</view>
+                    <view wx:for="{{ item.biaoqian }}" wx:for-item="i_name" class="you_bd clearfix">
+                        <view>{{i_name}}</view>
                     </view>
-                    <view class="you_img">
-                        <image src="../images/12.png"></image>
-                        <image src="../images/11.png"></image>
-                        <image src="../images/10.png"></image>
+                    <view wx:for="{{ item.zhanshiimg }}" wx:for-item="i_img" class="you_img">
+                        <image src="{{ i_img }}"></image>
                     </view>
-                    <view class="you_foot">吧啦吧啦一大堆</view>
+                    <view class="you_foot">{{item.foottext}}</view>
                 </view>
             </view>     
             <!-- 推荐主体结束-->

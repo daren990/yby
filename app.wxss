@@ -7,5 +7,5 @@
      visibility:hidden;        
 }
 image{
-    background-size: cover;
+    background-size: cover auto;
 }

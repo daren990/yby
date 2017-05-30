@@ -3,10 +3,12 @@
 <!--叶头-->
     <view class="page_hd">
           <view class="hd_left">
-            <view class="left_click">推荐</view>
+            <view wx:if="{{ zuo_you == 1 }}" bindtap="tapName" class="left_click click_bottom">推荐</view>
+            <view wx:if="{{ zuo_you == 2 }}" bindtap="tapName" class="left_click">推荐</view>
           </view>
           <view class="hd_left">
-            <view class="rigin_click">附近</view>
+            <view wx:if="{{ zuo_you == 2 }}" bindtap="tapName" class="rigin_click click_bottom">附近</view>
+            <view wx:if="{{ zuo_you == 1 }}" bindtap="tapName" class="rigin_click">附近</view>
           </view>
     </view>
     <!--叶尾end-->
@@ -14,7 +16,7 @@
     <view class="page_bd">
         <view class="bd_bd">
         <!--推荐主体-->
-            <view wx:for="{{recommend}}" wx:for-item="item" class="left_bd clearfix">
+            <view wx:if="{{ zuo_you == 1 }}" wx:for="{{recommend}}" wx:for-item="item" class="left_bd clearfix">
                 <view class="zuo">
                     <image src="{{item.touxiangimg}}"></image>
                 </view>
@@ -25,19 +27,61 @@
                             <image src="{{ item.gender }}"></image>
                         </view>
                         <view class="top_right">
-                            <view class="mony">{{}item.mony}</view>元/时
+                            <view class="mony">{{item.mony}}</view>元/时
                         </view>
                     </view>
-                    <view wx:for="{{ item.biaoqian }}" wx:for-item="i_name" class="you_bd clearfix">
-                        <view>{{i_name}}</view>
+                    <view class="you_bd clearfix">
+                        <view wx:for="{{ item.biaoqian }}" wx:for-item="i_name">{{i_name}}</view>
                     </view>
-                    <view wx:for="{{ item.zhanshiimg }}" wx:for-item="i_img" class="you_img">
-                        <image src="{{ i_img }}"></image>
+                    <view class="you_img">
+                        <image  wx:for="{{ item.zhanshiimg }}" wx:for-item="i_img" src="{{ i_img }}"></image>
                     </view>
                     <view class="you_foot">{{item.foottext}}</view>
                 </view>
-            </view>     
+            </view>    
             <!-- 推荐主体结束-->
+            <!--附近主体-->
+            <view  wx:if="{{ zuo_you == 2 }}" class="right_bd clearfix">
+                <!--index.wxml-->
+                <view style="display:none">
+                <image wx:for="{{images}}" wx:key="id" id="{{item.id}}" src="{{item.pic}}"      bindload="onImageLoad"></image>
+                </view>
+                <scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadImages">
+                <view style="width:100%">
+                    <view class="img_item">
+                    <view class="body" wx:for="{{col1}}" wx:key="id">
+                        <image src="{{item.pic}}"style="width:100%;height:{{item.height}}px"></image>
+                        <view class="name">
+                            {{item.name}}
+                            <image src="{{item.gender}}"></image>
+                        </view>
+                        <view class="name_foot">
+                            <span>出租</span>
+                            <view class="name_mony">
+                                <text>{{item.mony}}</text>元/时
+                            </view>
+                        </view>
+                    </view>
+                    </view>
+                    <view class="img_item">
+                    <view class="body" wx:for="{{col2}}" wx:key="id">
+                        <image src="{{item.pic}}"style="width:100%;height:{{item.height}}px"></image>
+                        <view class="name">
+                            {{item.name}}
+                            <image src="{{item.gender}}"></image>
+                        </view>
+                        <view class="name_foot">
+                            <span>出租</span>
+                            <view class="name_mony">
+                                <text>{{item.mony}}</text>元/时
+                            </view>
+                        </view>
+                    </view>
+                    </view>
+                </view>
+                </scroll-view>
+            </view>
+            <!--附近主体end-->
         </view>
     </view>         
     <!--主体end-->

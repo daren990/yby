@@ -6,6 +6,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarTitleText": "友帮友",
-    "navigationBarTextStyle":"witch"
+    "navigationBarTextStyle":"witch",
+    "enablePullDownRefresh":"true"
   }
 }
